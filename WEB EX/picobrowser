@@ -1,0 +1,7 @@
+for the picobrowser challenge we have to change the user agent 
+this can be achieved by using network controls under inspection tab 
+
+Some information on user agents ::
+The user agent acts as a mediator between the user and the web server just like a human agent.
+It processes the user's instructions, transfers them and receives the requested data. 
+The user agent transmits information such as the browser version, installed plugins, and other data to the web server.
