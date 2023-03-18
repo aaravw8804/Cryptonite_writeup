@@ -1,0 +1,16 @@
+in this question also we have like characters in hexadecimal form that have to be decoded 
+but the thing is we have to XOR the converted characters with 0x55 (that is 7 ) to get the actual characters of the flag 
+this can be acheived by using the pyhton code :
+
+passBytes = [None]*32
+myBytes = [
+            0x3b, 0x65, 0x21, 0xa , 0x38, 0x0 , 0x36, 0x1d,
+            0xa , 0x3d, 0x61, 0x27, 0x11, 0x66, 0x27, 0xa ,
+            0x21, 0x1d, 0x61, 0x3b, 0xa , 0x2d, 0x65, 0x27,
+            0xa , 0x6c, 0x61, 0x6d, 0x37, 0x6d, 0x6d, 0x6d,
+	]
+
+for i in range(32):
+	passBytes[i] =  chr(myBytes[i] ^ 0x55)
+
+print("picoCTF{{{}}}".format(''.join(passBytes)))
