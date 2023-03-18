@@ -1,0 +1,5 @@
+so in vault door 5 we were like given a string that was initially url encoded and then base64 encoded
+so what we had to do was just reverse engineer it 
+
+so i achieved this using CyberChef 
+
