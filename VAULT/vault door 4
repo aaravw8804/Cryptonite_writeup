@@ -1,0 +1,30 @@
+in vault door four we were given a byte array consisting of decimal, binary, hexadecimal and octal numbers 
+we had to convert each element of this array into a character and acquire the flag
+
+therefore the code is 
+
+def crackPassowrd():
+    myBytes = [106 , 85  , 53  , 116 , 95  , 52  , 95  , 98  ,
+            0x55, 0x6e, 0x43, 0x68, 0x5f, 0x30, 0x66, 0x5f,
+            0o142, 0o131, 0o164, 0o63 , 0o163, 0o137, 0o70 , 0o146,
+            '4' , 'a' , '6' , 'c' , 'b' , 'f' , '3' , 'b' ]
+    newMyBytes = []
+    for val in myBytes:
+        if(isinstance(val, int)):
+            newMyBytes.append(chr(val))
+        elif(str(val).startswith('0x')):
+            newMyBytes.append(bytes.fromhex(val).decode('utf-8'))
+        elif(str(val).startswith('0o')):
+            newMyBytes.append(chr(val))
+        elif(isinstance(val, str)):
+            newMyBytes.append(val)
+    return newMyBytes
+
+#This function constructs the flag based on the crackPassword function
+def getFlag(newMyBytes):
+    res = "picoCTF{"
+    for i in newMyBytes:
+        res += i
+    return res + "}"
+
+print(getFlag(crackPassowrd()))
